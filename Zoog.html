@@ -1,0 +1,125 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+      function setup() {
+  createCanvas(800, 600);
+}
+
+function draw() {
+  background(220);
+  strokeWeight(1);
+  stroke(0,0,0); // black strokes
+  fill(0) // white fill
+  quad(400,120,580,300,400,450,220,300) // body shape
+  
+  fill(255,255,0) // yellow fill
+  rectMode(CORNER) 
+  rect(360,220,70,30) // neck area
+ 
+  fill(50) // black fill
+  quad(360,260,440,260,410,300,390,300)	// upper tie
+  
+  beginShape() // bottom tie shape
+  fill(50);
+  vertex(390,300);
+  vertex(410,300);
+  vertex(440,440);
+  vertex(400,480);
+  vertex(360,440);
+  endShape();
+  
+  stroke(249, 232, 6) // yellow stroke
+  fill(249, 232, 6) // yellow fill
+  arc (372,420,110,50,5,1.2) // moon
+  fill(50) // 
+  arc (370,420,80,51,5,1.25) //moon
+  
+  stroke(0,0,0)
+  fill(255); // white fill
+  triangle(320,200,360,280,400,250); //left collar
+  triangle(480,200,440,280,400,250); // right ccollar
+  
+  strokeWeight(3)
+  stroke(254,153,0)
+  line(440,30,440,50)
+  strokeWeight(1)
+  stroke(0)
+  
+  fill(250,255,0); // yellow color
+  ellipse (400,140,200,200); // head shape
+  
+  fill(74)
+  beginShape(); // bottom cap
+  vertex(370,25)
+  vertex(430,25)
+  vertex(430,60)
+  vertex(400,70)
+  vertex(370,60)
+  endShape()
+  
+  beginShape() // top cap
+  vertex(400,0)
+  vertex(440,30)
+  vertex(400,50)
+  vertex(360,30)
+  endShape() 
+  
+  strokeWeight(10)
+  stroke(254,153,0) // orange color
+  point(400,25) 
+  
+  strokeWeight(3)
+  line(400,25,440,30)
+  stroke(0)
+  strokeWeight(1)
+  
+  fill(255);
+  ellipse(360,120,8,8); // left eye
+  ellipse(440,120,8,8); // right eye
+  
+  fill(255);
+  arc(400,160,120,120,0,PI) // bottom lip
+  
+  fill(250,255,0);
+  arc (400,160,120,60,0,PI) // upper lip
+  line (350,177,350,193) // smile line 1
+  line (365,185,365,207) // smile line 2
+  line (380,189,380,216) // smile line 3
+  line (395,190,395,219) // smile line 4
+  line (410,189,410,219) // smile line 5
+  line (425,187,425,214) // smile line 6
+  line (440,182,440,204) // smile line 7
+  line (454,172,454,183) // smile line 8
+  
+  textAlign(CENTER) // centered text
+  textSize(50)
+  fill(0) // black fill
+  text("Fun times are bound to end!",400,530)
+  
+  
+  
+                        
+  
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/YuhongZ9309/p5js/blob/master/Zoog.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
