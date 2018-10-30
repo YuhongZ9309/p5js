@@ -1,0 +1,133 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+<head>
+    <title>p5js Template</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/0.6.0/p5.js"></script>
+    <script>
+var thickness;
+var circle;
+var rectangle;
+var r;
+var g;
+var b;
+
+function setup() { 
+    createCanvas(700, 600);
+    background (220);
+    thickness = 20;
+    circle = 0;
+    rectangle = 1;
+    r = floor(random(50,250));
+    b = floor(random(50,250));
+    g = floor(random(50,250));
+     rectMode(CENTER);
+   
+}
+
+function draw() {
+    push();
+    textAlign(CENTER);
+    fill(255);
+    stroke(0);
+    strokeWeight(2);
+    rect(610,290,190,710);
+    fill(0);
+    
+    textAlign(LEFT);
+    textSize(15);
+    text("PREVIEW",575,20);
+    text("1 - changes to circles",530,200+40); // puts the instructions
+    text("2 - changes to rect",530,230+40);
+    text("W - change the color",530,260+40);
+    text("A - increase the size",530,290+40);
+    text("S - reset the background",530,320+40);
+    text("D - decrease the size",530,350+40);
+    
+    fill(r,g,b);
+    stroke(0);
+    
+    if (rectangle === 1) { // if rect is selected, it will make a rect preview
+        stroke(r,g,b);
+        rect(610,30+(thickness/2),thickness,thickness);
+    }
+    if (circle === 1) { // if circle is selected, it will make a rect preview
+        stroke(r,g,b);
+        ellipse(610,30+(thickness/2),thickness,thickness);
+    }
+    pop();
+}
+
+function keyPressed() {
+	if (key === '1') { // set the drawing to circles
+        circle = 1;
+        rectangle = 0;
+        dots = 0;
+    }
+    
+    if (key === '2') { // set the drawing to rectangles
+        circle = 0;
+    	rectangle = 1;
+        dots = 0;
+    }
+    
+    if (key === 'a') { // decrease the size if a is pressed
+        if (thickness <= 5) {
+            thickness = 5;
+        } else {
+        	thickness = thickness - 5
+        }
+    }
+    
+    if (key === 'd') { // increase the size if d is pressed
+        if (thickness >= 150){
+            thickness = 150;
+        } else {
+            thickness = thickness + 5;
+        }
+    }
+    
+	if (key === 's') { // reset the background if s is pressed
+        background(220);
+    }
+    
+    if (key === 'w') { // changes color if w is pressed
+        r = floor(random(0,250));
+   		b = floor(random(0,250));
+    	g = floor(random(0,250));
+    }
+        
+}
+
+function mouseDragged() {
+
+	if (circle === 1) { // draws circles if condition is true
+        fill(r,g,b);
+        stroke(r,g,b);
+    	ellipse(mouseX, mouseY, thickness,thickness);
+	}
+    
+    if (rectangle === 1) { // draw rectangles if condtion is true
+        fill(r,g,b);
+        stroke(r,g,b);
+        rect(mouseX,mouseY,thickness,thickness);
+    }
+}
+    </script>
+</head>
+
+<body>
+    <div id="code" class="container-fluid">
+        <script src="https://gist-it.appspot.com/github/YuhongZ9309/p5js/blob/master/InteractiveProject.html?footer=0"></script>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script>
+        $(window).bind("load", function() {
+            $('#code').before($('#defaultCanvas0').remove());
+        });
+    </script>
+</body>
+
+
+</html>
