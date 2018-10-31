@@ -13,7 +13,7 @@ var g;
 var b;
 
 function setup() { 
-    createCanvas(700, 600);
+    createCanvas(700, 600).parent('above');
     background (220);
     thickness = 20;
     circle = 0;
